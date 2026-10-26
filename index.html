@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reading List Tracker</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { padding: 8px; margin: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Book Reading List</h2>
+  <input type="text" id="bookInput" placeholder="Enter book title..." />
+  <button onclick="addBook()">Add Book</button>
+  <ul id="bookList"></ul>
+
+  <script>
+    function addBook() {
+      const val = document.getElementById('bookInput').value;
+      if (!val) return;
+      const li = document.createElement('li');
+      li.textContent = val + " — Want to Read";
+      document.getElementById('bookList').appendChild(li);
+      document.getElementById('bookInput').value = '';
+    }
+  </script>
+</body>
+</html>
